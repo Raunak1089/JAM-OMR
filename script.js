@@ -7,7 +7,9 @@ localStorage.setItem('OMRAnswers',answers)
 }
 
 function completed() {
-answers = "<table>";
+answers = `<button style="font-size:2em" onclick="copy()">Copy</button>
+<br>
+<table>`;
  for (let i = 1; i <= 60; i++) {
         answers += `<tr><td>${answer(i)}</td></tr>`;
  }
@@ -15,6 +17,39 @@ answers+="</table>"
 document.write(answers);
 };
 
+copy(document.querySelector('table'));
+function copy(el) {
+	var body = document.body, range, sel;
+	if (document.createRange && window.getSelection) {
+		range = document.createRange();
+		sel = window.getSelection();
+		sel.removeAllRanges();
+		try {
+			range.selectNodeContents(el);
+			sel.addRange(range);
+		} catch (e) {
+			range.selectNode(el);
+			sel.addRange(range);
+		}
+	} else if (body.createTextRange) {
+		range = body.createTextRange();
+		range.moveToElementText(el);
+		range.select();
+	}
+	document.execCommand('copy');
+
+
+function clearSelection() {
+    if (window.getSelection) {
+        window.getSelection().removeAllRanges();
+    } else if (document.selection) {
+        document.selection.empty();
+    }
+}
+	clearSelection();
+
+
+}
 
 function answer(i){
     if(1<=i && i<=30){
