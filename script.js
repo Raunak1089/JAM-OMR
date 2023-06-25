@@ -6,6 +6,10 @@ let answers = "";
 localStorage.setItem('OMRAnswers',answers)
 }
 
+function resetOption(i){
+    document.querySelector(`[name="question${i}"]:checked`).checked=false;
+}
+
 function completed() {
 let answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied!'">Copy</button>
 <br>
