@@ -17,7 +17,7 @@ answers+="</table>"
 document.write(answers);
 };
 
-copy(document.querySelector('table'));
+
 function copy(el) {
 	var body = document.body, range, sel;
 	if (document.createRange && window.getSelection) {
