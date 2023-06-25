@@ -7,7 +7,7 @@ localStorage.setItem('OMRAnswers',answers)
 }
 
 function completed() {
-answers = `<button style="font-size:2em" onclick="copy()">Copy</button>
+answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'))">Copy</button>
 <br>
 <table>`;
  for (let i = 1; i <= 60; i++) {
