@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OMR Sheet</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>OMR Sheet</h1>
+
+    <table>
+      <tr>
+        <th>Question</th>
+        <th>Options</th>
+      </tr>
+      <!-- Single Correct Options -->
+      <script>
+        for (let i = 1; i <= 30; i++) {
+          document.write(`
+            <tr>
+              <td>Question ${i}</td>
+              <td>
+                <label>
+                  <input type="radio" name="question${i}" value="A"> A
+                </label>
+                <label>
+                  <input type="radio" name="question${i}" value="B"> B
+                </label>
+                <label>
+                  <input type="radio" name="question${i}" value="C"> C
+                </label>
+                <label>
+                  <input type="radio" name="question${i}" value="D"> D
+                </label>
+              </td>
+            </tr>
+          `);
+        }
+      </script>
+      <!-- Multiple Correct Options -->
+      <script>
+        for (let i = 31; i <= 40; i++) {
+          document.write(`
+            <tr>
+              <td>Question ${i}</td>
+              <td>
+                <label>
+                  <input type="checkbox" name="question${i}" value="A"> A
+                </label>
+                <label>
+                  <input type="checkbox" name="question${i}" value="B"> B
+                </label>
+                <label>
+                  <input type="checkbox" name="question${i}" value="C"> C
+                </label>
+                <label>
+                  <input type="checkbox" name="question${i}" value="D"> D
+                </label>
+              </td>
+            </tr>
+          `);
+        }
+      </script>
+      <!-- Numerical Answer Type-->
+      <script>
+        for (let i = 41; i <= 60; i++) {
+          document.write(`
+            <tr>
+              <td>Question ${i}</td>
+              <td>
+                <label>
+                  <input type="number" name="question${i}" > 
+                </label>
+              </td>
+            </tr>
+          `);
+        }
+      </script>
+    </table>
+    <button onclick="completed()">Submit</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
