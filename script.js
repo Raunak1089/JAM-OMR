@@ -15,6 +15,7 @@ answers = `<button style="font-size:2em" onclick="copy(document.querySelector('t
  }
 answers+="</table>"
 document.write(answers);
+	document.title="Your Answers";
 };
 
 
