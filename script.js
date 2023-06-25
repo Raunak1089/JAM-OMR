@@ -1,5 +1,5 @@
 document.body.onclick=()=>{
-answers = "";
+let answers = "";
  for (let i = 1; i <= 60; i++) {
         answers += `${i}. ${answer(i)}<br>`;
  }
@@ -7,7 +7,7 @@ localStorage.setItem('OMRAnswers',answers)
 }
 
 function completed() {
-answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied!'">Copy</button>
+let answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied!'">Copy</button>
 <br>
 <table>`;
  for (let i = 1; i <= 60; i++) {
@@ -67,4 +67,30 @@ function answer(i){
     if(41<=i && i<=60){
         return document.querySelector(`[name="question${i}"]`).value;
     }
+}
+
+
+//TIMER ________________
+
+
+function getTime(seconds){
+    hr = Math.floor((seconds)/3600).toString();
+    min = Math.floor(((seconds)%3600)/60).toString();
+    sec = Math.floor(((seconds)%3600)%60).toString();
+    if(hr.length == 1){hr='0'+hr;}
+    if(min.length == 1){min='0'+min;}
+    if(sec.length == 1){sec='0'+sec;}
+    return `${hr}:${min}:${sec}`;
+}
+
+
+
+document.querySelector('timer start').onclick=()=>{
+    document.querySelector('timer start').hidden = true;
+    let duration = 10800;
+    timer_interval = setInterval(()=>{
+        document.querySelector('timer showtime').innerText=getTime(duration);
+        if(duration==0) {completed(); clearInterval(timer_interval);}
+        duration--;
+    },1000)
 }
