@@ -51,3 +51,27 @@ tr:hover {
 label {
   margin-right: 10px;
 }
+
+timer {
+  width: fit-content;
+  height: 2em;
+  position: fixed;
+  display: flex;
+  font-size: 1.5em;
+  opacity: 0.7;
+  flex: 1 1 0%;
+  z-index: 1;
+  transition: opacity 0.3s ease 0s;
+  top: 10px;
+  right: 10px;
+  align-items: center;
+}
+
+timer > *{
+  margin: 5px;
+}
+
+start > i{
+  font-size: 1.5em;
+  color: #0084ff;
+}
