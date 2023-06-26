@@ -11,6 +11,7 @@ function resetOption(i){
 }
 
 function completed() {
+clearInterval(timer_interval);
 let answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied!'">Copy</button>
 <br>
 <table>`;
@@ -100,7 +101,7 @@ document.querySelector('timer start').onclick=()=>{
 
     timer_interval = setInterval(()=>{
         document.querySelector('timer showtime').innerText=getTime(duration);
-        if(duration==0) {completed(); clearInterval(timer_interval);}
+        if(duration==0) completed();
         duration--;
     },1000)
 }
