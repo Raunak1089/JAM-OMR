@@ -92,6 +92,12 @@ function getTime(seconds){
 document.querySelector('timer start').onclick=()=>{
     document.querySelector('timer start').hidden = true;
     let duration = 10800;
+
+    document.body.style.overflow="auto";
+    window.scrollTo(0, 0);
+    document.querySelector('#omrSheet').classList.add('exam-start');
+    document.querySelector('timer').classList.remove('before-start');
+
     timer_interval = setInterval(()=>{
         document.querySelector('timer showtime').innerText=getTime(duration);
         if(duration==0) {completed(); clearInterval(timer_interval);}
