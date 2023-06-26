@@ -3,16 +3,17 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <title>OMR Sheet</title>
-  <link rel="icon" sizes="192x192" href="https://raunak1089.github.io/Required-files/favicon.ico">  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" sizes="192x192" href="https://raunak1089.github.io/Required-files/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://raunak1089.github.io/all_scripts/fontawesome.js"></script>
 </head>
 <body>
-    <timer>
+    <timer class="before-start">
       <start><i class="fa-duotone fa-circle-play"></i></start>
       <showtime>03:00:00</showtime>
     </timer>
 
-
+<div id="omrSheet">
   <h1>OMR Sheet</h1>
 
     <table>
@@ -92,7 +93,7 @@
     </table>
 
     <input type="button" id="savenext" onclick="completed()" value="Submit" title="Submit">
-
+  </div>
     <script src="script.js"></script>
 </body>
 </html>
