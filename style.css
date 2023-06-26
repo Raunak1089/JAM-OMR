@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   user-select: none;
+  overflow: hidden;
 }
 
 h1 {
@@ -11,6 +12,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+}
+
+#omrSheet{
+  transform: scale(0);
+  transition: 0.8s;
+}
+.exam-start{
+  transform: scale(1) !important;
 }
 
 th, td {
@@ -43,10 +52,16 @@ timer {
   opacity: 0.7;
   flex: 1 1 0%;
   z-index: 1;
-  transition: opacity 0.3s ease 0s;
   top: 10px;
-  right: 10px;
+  left: calc(100% - 10px);
   align-items: center;
+  transform: translateX(-100%);
+  transition: 0.8s;
+}
+.before-start{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
 }
 
 timer > *{
