@@ -10,7 +10,7 @@
 <body>
     <timer class="before-start">
       <start><i class="fa-duotone fa-circle-play"></i></start>
-      <showtime>03:00:00</showtime>
+      <showtime title="Time left">03:00:00</showtime>
     </timer>
 
 <div id="omrSheet">
@@ -69,7 +69,9 @@
                   <input type="checkbox" name="question${i}" value="D"> D
                 </label>
               </td>
-              <td></td>
+              <td>
+                <input type="button" style="opacity:0">
+              </td>
             </tr>
           `);
         }
@@ -85,7 +87,9 @@
                   <input type="number" name="question${i}" > 
                 </label>
               </td>
-              <td></td>
+              <td>
+                <input type="button" style="opacity:0">
+              </td>
             </tr>
           `);
         }
