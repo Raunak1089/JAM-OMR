@@ -141,3 +141,5 @@ function loadCalculator(){
 document.querySelector('#closeButton1').onclick=()=>{
     calc.style.display = "none";
 }
+
+document.querySelector('#mainContentArea').onclick=()=>{document.querySelector('#keyPad_UserInput1').value = document.querySelector('#keyPad_UserInput1').value.replaceAll(' ','')}
