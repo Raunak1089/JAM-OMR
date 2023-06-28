@@ -105,3 +105,40 @@ document.querySelector('timer start').onclick=()=>{
         duration--;
     },1000)
 }
+
+
+const calc = document.querySelector('#loadCalc');
+calc.style.right="10px";
+calc.style.top="40px";
+calc.style.display="none";
+
+let from_x, from_y, init_x, init_y;
+let dragging;
+calc.onmousedown=(ev)=>{
+    from_x = parseInt(calc.style.left);
+    from_y = parseInt(calc.style.top);
+    init_x = ev.clientX; init_y = ev.clientY;
+    dragging = true;
+}
+document.onmouseup=()=>{
+    dragging = false;
+}
+document.onmousemove=(ev)=>{
+    if(dragging){
+        calc.style.left = from_x + ev.clientX - init_x + "px";
+        calc.style.top = from_y + ev.clientY - init_y + "px";
+    }
+}
+
+function loadCalculator(){
+    if(calc.style.display=="none"){
+        calc.style.display = "";
+    } else {
+        calc.style.display = "none";
+    }
+}
+
+document.querySelector('#closeButton1').onclick=()=>{
+    calc.style.display = "none";
+}
+
