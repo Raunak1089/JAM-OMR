@@ -16,6 +16,7 @@ table {
 
 #omrSheet{
   transform: scale(0);
+  margin-top: 50px;
   transition: 0.8s;
 }
 .exam-start{
@@ -52,8 +53,8 @@ timer {
   opacity: 0.7;
   flex: 1 1 0%;
   z-index: 1;
-  top: 10px;
-  left: calc(100% - 10px);
+  top: -5px;
+  left: calc(100% - 30px);
   align-items: center;
   transform: translateX(-100%);
   transition: 0.8s;
@@ -112,3 +113,31 @@ input[type="button"]{
   border: 1px solid #333;
   color: #ffffff;
 }
+
+.calculator-icon-container{
+  width: 100vw;
+  background: grey;
+  height: fit-content;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background: #f2f2f2;
+  height: 35px;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  z-index: 5;
+  align-items: center;
+}
+
+.calc-icon {
+  background: url(https://www.digialm.com//OnlineAssessment/images/Icon-sprite.png) no-repeat -148px -91px;
+  display: block;
+  height: 26px;
+  width: 20px;
+}
+
