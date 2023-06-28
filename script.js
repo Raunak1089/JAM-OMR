@@ -115,7 +115,7 @@ calc.style.display="none";
 let from_x, from_y, init_x, init_y;
 let dragging;
 calc.onmousedown=(ev)=>{
-    from_x = parseInt(calc.style.left);
+    from_x = parseInt(window.getComputedStyle(calc).getPropertyValue('left'));
     from_y = parseInt(calc.style.top);
     init_x = ev.clientX; init_y = ev.clientY;
     dragging = true;
@@ -134,11 +134,10 @@ function loadCalculator(){
     if(calc.style.display=="none"){
         calc.style.display = "";
     } else {
-        calc.style.display = "none";
+        calc.style.display="none";
     }
 }
 
 document.querySelector('#closeButton1').onclick=()=>{
     calc.style.display = "none";
 }
-
