@@ -1,9 +1,17 @@
 document.body.onclick=()=>{
+
+//  EMERGENCY STORE THE ANSWERS ___________
 let answers = "";
  for (let i = 1; i <= 60; i++) {
         answers += `${i}. ${answer(i)}<br>`;
  }
-localStorage.setItem('OMRAnswers',answers)
+localStorage.setItem('OMRAnswers',answers);
+
+//  SHOW ANSWERED STATISTICS _______________
+let answered = 0
+for(i=1;i<=60;i++) if(answer(i)!='') answered++;
+document.querySelectorAll('numb')[0].innerText = answered;
+document.querySelectorAll('numb')[1].innerText = 60-answered;
 }
 
 function resetOption(i){
