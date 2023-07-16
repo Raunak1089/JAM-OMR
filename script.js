@@ -74,7 +74,7 @@ function answer(i){
     if(31<=i && i<=40){
         if(document.querySelectorAll(`[name="question${i}"]:checked`).length==0) return ''
         else {
-            return Array.prototype.map.call(document.querySelectorAll(`[name="question${i}"]:checked`),(input)=>{return input.value}).join(';')
+            return Array.prototype.map.call(document.querySelectorAll(`[name="question${i}"]:checked`),(input)=>{return input.value}).join(', ')
         }
     }
     if(41<=i && i<=60){
