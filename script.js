@@ -20,7 +20,7 @@ function resetOption(i){
 
 function completed() {
 clearInterval(timer_interval);
-let answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied!'">Copy</button>
+let answers = `<button style="font-size:2em" onclick="copy(document.querySelector('table'));this.innerHTML='Copied! Paste in Excel to match answers ...'">Copy</button>
 <br>
 <table>`;
  for (let i = 1; i <= 60; i++) {
